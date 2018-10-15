@@ -1,0 +1,8 @@
+{
+  "name": "commentBox",
+  "version": "1.0.0",
+  "description": "A social media-like comment box",
+  "main": "index.js",
+  "author": "Mikal Callahan <mikal.callahan@icloud.com>",
+  "license": "MIT"
+}
