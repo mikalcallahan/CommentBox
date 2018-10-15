@@ -1,12 +1,12 @@
 // secrets.js
 
 // Get environment variables
-require('dotenv').config();
+import keys from './config';
 
 // Define secrets
 const secrets = {
-  dbUri: process.env.DB_URI,
+  dbUri: keys.DB_URI,
 };
 
 // Export secrets
-export const getSecret = key => console.log('secrets:' + secrets['dbUri']);
+export const getSecret = key => secrets[key];

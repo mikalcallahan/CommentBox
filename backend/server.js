@@ -6,20 +6,23 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
 
-require('dotenv').config();
-
 import {getSecret} from './secrets';
 
 // Initialize app
 const app = express();
 const router = express.Router();
+// dotenv.config()
 
 // If a predetermined port number is determined, use that
 // else use 3001
 const API_PORT = process.env.API_PORT || 3001;
 
+const options = {
+  useNewUrlParser: true,
+}
+
 // DB config
-mongoose.connect(getSecret('dbUri'));
+mongoose.connect(encodeURI(getSecret('dbUri')), options);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Mongo DB connectione error:'));
 
